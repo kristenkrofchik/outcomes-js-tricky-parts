@@ -11,16 +11,17 @@ function guessingGame() {
         }
         //if user guesses the correct number, set gameOver to true and return winning statement
         if(guess === num) {
+            numGuesses++;
             gameOver = true;
             const guess = numGuesses === 1 ? "guess" : "guesses";
-            return `You win! You found ${num} in ${numGuesses} ${guess}!`
+            return `You win! You found ${num} in ${numGuesses} ${guess}.`
         //else if the user guesses an incorrect number, give them a hint (higher, lower) and raise the numGuesses count
         } else if(guess < num) {
             numGuesses++;
-            return `${guess} is too low.`
+            return `${guess} is too low!`
         } else if(guess > num) {
             numGuesses++;
-            return `${guess} is too high`
+            return `${guess} is too high!`
         }
     }
 }
